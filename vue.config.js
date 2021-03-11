@@ -5,7 +5,7 @@ module.exports = {
       alias: {
         // @已经被vue配置别名为src
         'assets': '@/assets',
-        'common': '@/commom',
+        'common': '@/common',
         'components': '@/components',
         'network': '@/network',
         'views': '@/views',

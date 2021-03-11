@@ -22,3 +22,13 @@ function padLeftZero (str) {
   return ('00' + str).substr(str.length);
 };
 
+export function debounce(func,delay) {
+  let timer = null;
+  // 形成了闭包 对timer
+  return function(...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    },delay);
+  }
+}

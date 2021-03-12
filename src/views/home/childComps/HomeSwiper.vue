@@ -33,7 +33,9 @@ export default {
   },
   methods: {
     swiperLoad() {
+      // this.$emit('swiperLoad');
       if (!this.imageLoad) {
+        console.log('swiperLoad');
         this.$emit('swiperLoad');
         this.imageLoad = true;
       } 

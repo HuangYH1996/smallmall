@@ -24,5 +24,10 @@ export default new Router({
       path: '/profile',
       component: () => import('views/profile/Profile')
     },
+    {
+      // 动态路由
+      path: '/detail/:iid',
+      component: () => import('views/detail/Detail')
+    },
   ]
 })

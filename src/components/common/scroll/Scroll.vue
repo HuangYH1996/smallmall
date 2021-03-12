@@ -41,6 +41,12 @@ export default {
     },
     finishPullUp() {
       this.scroll.finishPullUp();
+    },
+    scrollTo(x,y,delay) {
+      this.scroll && this.scroll.scrollTo(x,y,delay);
+    },
+    getCurrentY() {
+      return this.scroll.y ? this.scroll.y : 0;
     }
   },
   mounted() {
@@ -66,6 +72,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

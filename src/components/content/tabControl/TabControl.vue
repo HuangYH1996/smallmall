@@ -44,7 +44,7 @@ export default {
     position: sticky;
     top: 44px;
     background-color: #fff;
-    z-index: 9;
+    /* z-index: 9; */
   }
 
   .itemtab {

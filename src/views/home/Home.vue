@@ -20,13 +20,7 @@
       <GoodsList :goodslist="goodsList[this.currentType].list"></GoodsList>
     </scroll>
     <back-top class="backtop" @click.native="backClick" v-show="isShow"/>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+    
   </div>
 </template>
 
@@ -70,7 +64,8 @@ export default {
       currentType: "pop",
       isShow: false,
       tabcontrolHeight: 0,
-      isFixed: false
+      isFixed: false,
+      saveY: 0
     };
   },
   created() {
@@ -90,6 +85,14 @@ export default {
       refresh();
       // this.$refs.scroll && this.$refs.scroll.refresh();
     });
+  },
+  activated() {
+    console.log('home enter');
+    this.$refs.scroll.scrollTo(0, this.saveY,10);
+  },
+  deactivated() {
+    this.saveY = this.$refs.scroll.getCurrentY();
+    console.log('home leave'+this.saveY);
   },
   methods: {
     typeCilck(index) {

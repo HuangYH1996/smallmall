@@ -89,6 +89,7 @@ export default {
   activated() {
     console.log('home enter');
     this.$refs.scroll.scrollTo(0, this.saveY,10);
+    this.$refs.scroll.refresh();
   },
   deactivated() {
     this.saveY = this.$refs.scroll.getCurrentY();
@@ -173,7 +174,7 @@ export default {
 }
 
 .content {
-  height: 575px;
+  height: 540px;
   overflow: hidden;
 }
 

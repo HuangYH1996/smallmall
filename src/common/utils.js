@@ -25,10 +25,15 @@ function padLeftZero (str) {
 export function debounce(func,delay) {
   let timer = null;
   // 形成了闭包 对timer
-  return function(...args) {
-    clearTimeout(timer);
+  return function() {
+    let context = this;
+    let args = arguments;
+    if(timer) {
+      clearTimeout(timer);
+    }
     timer = setTimeout(() => {
-      func.apply(this, args);
+      func.apply(context, args);
+      // func(args);
     },delay);
   }
 }
